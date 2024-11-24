@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     // 假設有個簡單的帳號密碼驗證邏輯
     if (username === 'a' && password === 'a') {
       setUser('admin');
-    } else if (username === 'user' && password === 'user123') {
+    } else if (username === 'b' && password === 'b') {
       setUser('user');
     } else {
       setUser(null);

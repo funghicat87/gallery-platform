@@ -23,7 +23,7 @@ import Pattern020 from '../assets/patterns/pattern (20).jpg'
 const PatternInformation = [
   {
     code: 1,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "vivid",
     onShelf: true,
@@ -31,7 +31,7 @@ const PatternInformation = [
   },
   {
     code: 2,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "natural",
     onShelf: true,
@@ -39,7 +39,7 @@ const PatternInformation = [
   },
   {
     code: 3,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "natural",
     onShelf: true,
@@ -47,7 +47,7 @@ const PatternInformation = [
   },
   {
     code: 4,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "natural",
     onShelf: true,
@@ -55,7 +55,7 @@ const PatternInformation = [
   },
   {
     code: 5,
-    tone: "1tone",
+    tone: "3tone",
     color: "red",
     style: "natural",
     onShelf: true,
@@ -63,7 +63,7 @@ const PatternInformation = [
   },
   {
     code: 6,
-    tone: "1tone",
+    tone: "2tone",
     color: "red",
     style: "natural",
     onShelf: true,
@@ -71,7 +71,7 @@ const PatternInformation = [
   },
   {
     code: 7,
-    tone: "1tone",
+    tone: "3tone",
     color: "green",
     style: "natural",
     onShelf: true,
@@ -79,7 +79,7 @@ const PatternInformation = [
   },
   {
     code: 8,
-    tone: "1tone",
+    tone: "3tone",
     color: "red",
     style: "natural",
     onShelf: true,
@@ -87,7 +87,7 @@ const PatternInformation = [
   },
   {
     code: 9,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "vivid",
     onShelf: true,
@@ -103,7 +103,7 @@ const PatternInformation = [
   },
   {
     code: 11,
-    tone: "1tone",
+    tone: "2tone",
     color: "gray",
     style: "vivid",
     onShelf: true,
@@ -111,15 +111,15 @@ const PatternInformation = [
   },
   {
     code: 12,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "natural",
-    onShelf: true,
+    onShelf: false,
     image: Pattern012
   },
   {
     code: 13,
-    tone: "1tone",
+    tone: "2tone",
     color: "yellow",
     style: "natural",
     onShelf: true,
@@ -127,7 +127,7 @@ const PatternInformation = [
   },
   {
     code: 14,
-    tone: "1tone",
+    tone: "3tone",
     color: "gray",
     style: "natural",
     onShelf: true,
@@ -135,7 +135,7 @@ const PatternInformation = [
   },
   {
     code: 15,
-    tone: "1tone",
+    tone: "3tone",
     color: "yellow",
     style: "vivid",
     onShelf: true,
@@ -143,7 +143,7 @@ const PatternInformation = [
   },
   {
     code: 16,
-    tone: "1tone",
+    tone: "2tone",
     color: "brown",
     style: "natural",
     onShelf: true,
@@ -151,15 +151,15 @@ const PatternInformation = [
   },
   {
     code: 17,
-    tone: "1tone",
+    tone: "3tone",
     color: "blue",
     style: "hybrid",
-    onShelf: true,
+    onShelf: false,
     image: Pattern017
   },
   {
     code: 18,
-    tone: "1tone",
+    tone: "3tone",
     color: "red",
     style: "vivid",
     onShelf: true,
@@ -167,7 +167,7 @@ const PatternInformation = [
   },
   {
     code: 19,
-    tone: "1tone",
+    tone: "3tone",
     color: "gray",
     style: "vivid",
     onShelf: true,
@@ -175,7 +175,7 @@ const PatternInformation = [
   },
   {
     code: 20,
-    tone: "1tone",
+    tone: "3tone",
     color: "gray",
     style: "hybrid",
     onShelf: true,

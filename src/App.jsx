@@ -5,10 +5,12 @@ import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import UserDashboard from './pages/UserDashboard';
 import PrivateRoute from './component/PrivateRoute';
+import { FilterProvider } from './component/SearchBar';
 
 const App = () => {
   return (
     <AuthProvider>
+      <FilterProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -21,7 +23,7 @@ const App = () => {
             }
           />
           <Route
-            path="/user-dashboard"
+            path="/user-dashboard/*"
             element={
               <PrivateRoute role="user">
                 <UserDashboard />
@@ -30,6 +32,7 @@ const App = () => {
           />
         </Routes>
       </BrowserRouter>
+      </FilterProvider>
     </AuthProvider>
   );
 };
