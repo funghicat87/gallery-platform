@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../component/AuthContext';
 import Glacier from '../assets/glacier-01.png';
 import { InputText } from '../component/input';
+import { Button } from '../component/Button';
 
 const Login = () => {
   const { user, login, logout } = useContext(AuthContext)
@@ -81,13 +82,10 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}/>
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-            <button
-              type="submit"
-              className="w-full py-3 bg-main text-white font-semibold rounded-full hover:bg-darkmain active:scale-95 transition duration-300"
-            >
+            <Button type="submit">
               登入
-            </button>
-          </form>
+            </Button>
+            </form>
         </div>
       </div>
       

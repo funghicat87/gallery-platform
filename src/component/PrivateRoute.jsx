@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Route, Navigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 
-const PrivateRoute = ({ role, children }) => {
+const PrivateRoute = ({ children }) => {
   const { user } = useContext(AuthContext)
 
   if (!user) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Header from '../component/admin/AdminHeader'
 import AccountManagement from './admin/AccountManagement';
 import OverviewPattern from './admin/OverviewPattern';
@@ -7,9 +7,9 @@ import PatternUpload from './admin/PatternUpload';
 
 const AdminDashboard = () => {
   return (
-    <div className='bg-light h-full'>
+    <div className='bg-light flex flex-col h-screen'>
       <Header />
-      <div className='pt-24 mx-10'>
+      <div className='box-border pt-24 mx-10 flex-1 h-[calc(100vh-96px-24px)] overflow-auto'>
         <Routes>
           <Route index element={<OverviewPattern />} />
           <Route path="AccountManagement" element={<AccountManagement />} />

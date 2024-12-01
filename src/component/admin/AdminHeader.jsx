@@ -23,7 +23,7 @@ const NavLink = ({ to, children }) => {
 };
 console.log(location.pathname)
 const AdminHeader = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
   const location = useLocation();
 
   return (
