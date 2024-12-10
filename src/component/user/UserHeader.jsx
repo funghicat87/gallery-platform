@@ -6,16 +6,15 @@ import { AuthContext } from '../AuthContext'
 const UserHeader = () => {
   const { logout } = useContext(AuthContext);
   return (
-    <nav className="navbar bg-gray-100 py-4 px-6 flex justify-between items-center">
-      <div className="flex gap-6">
-
-        <button  
-          onClick={logout}
-          className="hover:text-red-400 transition duration-200">
-          登出
-        </button>
-      </div>
-    </nav>
+    <div className='w-full h-24 fixed z-50 bg-light '>
+      <nav className="bg-white relative top-5 mx-10 rounded-full py-4 px-16 flex justify-between">
+          <button  
+            onClick={logout}
+            className="hover:text-main transition duration-200">
+            登出
+          </button>
+      </nav>
+    </div>
   );
 };
 

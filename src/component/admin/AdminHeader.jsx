@@ -1,48 +1,63 @@
-import React , { useContext }from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthContext'
+import HamburgerMenu from '../HamburgerMenu';
 
 
-const NavLink = ({ to, children }) => {
-  return (
-    <div
-  className={
-    location.pathname === '/admin-dashboard/' + to
-      ? 'text-main relative after:content-[""] after:block after:w-full after:h-1 after:bg-light after:absolute after:-bottom-2 after:left-0 after:scale-x-100'
-      : 'relative after:content-[""] after:block after:w-full after:h-1 after:bg-light after:absolute after:-bottom-2 after:left-0 after:scale-x-0 after:origin-left after:duration-200 hover:after:scale-x-100'
-  }
->
-      <Link 
-      to={to} 
-      className="hover:text-main transition duration-200"
-      >
-        {children}
-      </Link>
-    </div>
-  );
-};
-console.log(location.pathname)
+
 const AdminHeader = () => {
-  const { logout } = useContext(AuthContext);
-  const location = useLocation();
+  const NavLink = ({ to, children }) => {
+    return (
+      <div
+        className={`relative after:content-[""] after:block after:w-full after:h-1 after:bg-light after:absolute after:-bottom-1 after:left-0 ${location.pathname === '/admin-dashboard/' + to ? 'text-main after:scale-x-100' : 'after:scale-x-0 after:origin-left after:duration-200 hover:after:scale-x-100'}`}
+      >
+        <Link 
+        to={to} 
+        className="hover:text-main transition duration-200"
+        >
+          {children}
+        </Link>
+      </div>
+    );
+  };
+  const { logout } = useContext(AuthContext)
+  const location = useLocation()
+  const [isNavOpen, setIsNavOpen] = useState(false)
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen)
+  };
+
 
   return (
-  <div className='w-full h-24 fixed z-50 bg-light '>
-    <nav className="bg-white relative top-5 mx-10 rounded-full py-4 px-16 flex justify-between">
-      <div className="flex gap-12">
-        <NavLink to="OverviewPattern" >圖紋總覽</NavLink>
-        <NavLink to="PatternUpload" className={location.pathname === '/PatternUpload' ? 'text-main' : ''}>圖紋上傳</NavLink>
-        <NavLink to="AccountManagement" className={location.pathname === '/AccountManagement' ? 'text-main' : ''}>帳號管理</NavLink>
+  <div className='w-full py-6 px-10 fixd z-50 flex items-center justify-center'>
+    <nav className="w-full bg-white relative rounded-full py-4 px-16 flex justify-between">
+      {/* md Nav */}
+      <div className="hidden md:flex gap-12">
+        <NavLink to="OverviewPattern">圖紋總覽</NavLink> 
+        <NavLink to="PatternUpload">圖紋上傳</NavLink>
+        <NavLink to="AccountManagement">帳號管理</NavLink>
       </div>
-        <button  
-          onClick={logout}
-          className="hover:text-main transition duration-200">
-          登出
-        </button>
+
+      {/* sm Nav */}
+      <div onClick={toggleNav} className='w-full block md:hidden '>
+        {isNavOpen ? <HamburgerMenu isOpen/> : <HamburgerMenu/>}
+        <div className={` overflow-hidden transition-all duration-300 ease-in-out ${isNavOpen ? 'max-h-screen' : 'max-h-0'}`}>
+          <div className={`m-4 gap-8 flex flex-col items-center justify-center '} md:hidden`}>
+            <NavLink to="OverviewPattern">圖紋總覽</NavLink>
+            <NavLink to="PatternUpload">圖紋上傳</NavLink>
+            <NavLink to="AccountManagement">帳號管理</NavLink>
+          </div>
+        </div>
+      </div>
+
+      <button  
+        onClick={logout}
+        className="hidden md:block hover:text-main transition duration-200">
+        登出
+      </button>
     </nav>
   </div>
-
-
   );
 };
 

@@ -5,11 +5,13 @@ import UserPage from '../pages/user/UserPage'
 
 const UserDashboard = () => {
   return (
-    <div>
+    <div className='bg-light flex flex-col h-screen'>
       <Header />
-      <Routes>
-        <Route index element={<UserPage />} />
-      </Routes>
+      <div className='box-border pt-24 mx-10 flex-1 h-[calc(100vh-96px-24px)] overflow-auto'>
+        <Routes>
+          <Route index element={<UserPage />} />
+        </Routes>
+      </div>
     </div>
   );
 };

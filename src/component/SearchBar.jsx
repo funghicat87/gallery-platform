@@ -38,10 +38,11 @@ export const FilterProvider = ({ children }) => {
   )
 }
 
-export const SearchBar = () => {
+export const SearchBar = ({ ShowOnShelf }) => {
   const { filters, handleFilterChange } = useContext(FiltersContext);
+  const { showOnShelf, setShowOnShelf } = useState(false)
 
-  const Options = ({ OptionArray, type, title }) => {
+  const Options = ({ OptionArray, type, title}) => {
     return (
       <div className="flex flex-col ml-3">
         <p className="text-xl mt-4 mb-2 font-semibold">{ title }</p>
@@ -88,11 +89,14 @@ export const SearchBar = () => {
           type='style'
           title='風格'
         />
-        <Options
-          OptionArray={OnShelfOptions}
-          type='onShelf'
-          title='狀態'
-        />
+        {
+          !ShowOnShelf &&(
+          <Options
+            OptionArray={OnShelfOptions}
+            type='onShelf'
+            title='狀態'
+          />)
+        }
     </div>
   )
 }

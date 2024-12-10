@@ -3,7 +3,7 @@ import { SearchBar, FiltersContext } from '../../component/SearchBar.jsx';
 import { ToneOptions, ColorOptions, StyleOptions, OnShelfOptions } from '../../utils/ToneOptions.jsx'
 import { UploadArea } from '../../component/UploadArea.jsx';
 import { Button } from '../../component/Button.jsx';
-// import { PatternUpload } from './PatternUpload.jsx'
+
 const OverviewPattern = () => {
   const { filteredPatterns } = useContext(FiltersContext);
   const [isEditing, setIsEditing] = useState(false);
