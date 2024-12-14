@@ -30,7 +30,7 @@ const AdminHeader = () => {
 
 
   return (
-  <div className='w-full py-6 px-10 fixd z-50 flex items-center justify-center'>
+  <div className='w-full py-6 px-4 sm:px-10 fixd z-50 flex items-center justify-center'>
     <nav className="w-full bg-white relative rounded-full py-4 px-16 flex justify-between">
       {/* md Nav */}
       <div className="hidden md:flex gap-12">
@@ -43,10 +43,15 @@ const AdminHeader = () => {
       <div onClick={toggleNav} className='w-full block md:hidden '>
         {isNavOpen ? <HamburgerMenu isOpen/> : <HamburgerMenu/>}
         <div className={` overflow-hidden transition-all duration-300 ease-in-out ${isNavOpen ? 'max-h-screen' : 'max-h-0'}`}>
-          <div className={`m-4 gap-8 flex flex-col items-center justify-center '} md:hidden`}>
+          <div className={`m-4 gap-8 flex flex-col items-center justify-center md:hidden`}>
             <NavLink to="OverviewPattern">圖紋總覽</NavLink>
             <NavLink to="PatternUpload">圖紋上傳</NavLink>
             <NavLink to="AccountManagement">帳號管理</NavLink>
+            <button  
+              onClick={logout}
+              className="hover:text-main transition duration-200">
+              登出
+            </button>
           </div>
         </div>
       </div>

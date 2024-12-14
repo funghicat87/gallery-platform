@@ -4,7 +4,7 @@
 
 /* width */
 *::-webkit-scrollbar {
-  width: 30px;
+  width: 25px;
 }
 
 /* Track */
@@ -18,6 +18,6 @@
   background: #ffffff;
   border-radius: 5px;
   border-left: 10px #dbe4f1 solid;
-  border-right: 10px #dbe4f1 solid;
+  border-right: 5px #dbe4f1 solid;
 }
 

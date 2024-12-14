@@ -36,7 +36,7 @@ const Login = () => {
      className="h-screen flex justify-center items-center bg-light"
     >    
       <div className='flex justify-center items-center bg-white p-3 md:flex-col lg:flex-row md:w-auto md:h-auto rounded-[40px]'>
-
+        {/* lg login */}
         <div className="hidden lg:block relative">
           <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0 }} width="0" height="0">
             <defs>
@@ -48,7 +48,7 @@ const Login = () => {
           <div
           className='h-[600px] w-[465px]'
             style={{
-              clipPath: 'url(#clip-shape)', // 使用這裡的形狀
+              clipPath: 'url(#clip-shape)',
             }} >
             <img 
               src={Glacier} 
@@ -58,6 +58,7 @@ const Login = () => {
             
           </div>
         </div>
+        {/* md picture */}
         <img 
           src={Glacier} 
           alt="Glacier" 
@@ -65,7 +66,7 @@ const Login = () => {
         />
         <div className="w-full flex flex-col justify-center items-center px-16 my-10 lg:my-0">
           <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">登入</h2>
-          <form onSubmit={handleSubmit} className='w-72'>
+          <form onSubmit={handleSubmit} className='w-44 sm:w-72'>
             <div className="mb-4">
               <label htmlFor="username" className="block text-gray-600">使用者名稱</label>
               <InputText type="text"
