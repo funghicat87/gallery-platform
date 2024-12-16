@@ -4,6 +4,7 @@ import { AuthContext } from '../component/AuthContext';
 import Glacier from '../assets/glacier-01.png';
 import { InputText } from '../component/input';
 import { Button } from '../component/Button';
+import Logo from '../assets/logo_Luniris.svg';
 
 const Login = () => {
   const { user, login, logout } = useContext(AuthContext)
@@ -36,7 +37,7 @@ const Login = () => {
      className="h-screen flex justify-center items-center bg-light"
     >    
       <div className='flex justify-center items-center bg-white p-3 md:flex-col lg:flex-row md:w-auto md:h-auto rounded-[40px]'>
-        {/* lg login */}
+        {/* lg picture */}
         <div className="hidden lg:block relative">
           <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0 }} width="0" height="0">
             <defs>
@@ -64,7 +65,9 @@ const Login = () => {
           alt="Glacier" 
           className="w-[500px] h-60 rounded-[32px] object-cover hidden md:block lg:hidden"
         />
+
         <div className="w-full flex flex-col justify-center items-center px-16 my-10 lg:my-0">
+          <img src={Logo} alt='Logo' className='h-10 mb-10'/>
           <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">登入</h2>
           <form onSubmit={handleSubmit} className='w-44 sm:w-72'>
             <div className="mb-4">

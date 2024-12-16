@@ -3,6 +3,7 @@ import { SearchBar, FiltersContext } from '../../component/SearchBar.jsx';
 import { ToneOptions, ColorOptions, StyleOptions, OnShelfOptions } from '../../utils/ToneOptions.jsx'
 import { UploadArea } from '../../component/UploadArea.jsx';
 import { Button } from '../../component/Button.jsx';
+import CloseButton from '../../component/CloseButton.jsx';
 
 const OverviewPattern = () => {
   const { filteredPatterns } = useContext(FiltersContext);
@@ -28,7 +29,10 @@ const OverviewPattern = () => {
     <div className="relative pb-6 flex flex-col w-full lg:flex-row lg:h-full">
         {isEditing && 
           <div className='fixed h-screen w-screen inset-0 flex items-center justify-center px-4 bg-light/80 z-50'>
-            <UploadArea onClick={handleEditClick}/>
+            <div className='bg-white rounded-[40px] flex flex-col items-end'>
+              <CloseButton onClick={handleEditClick} className='mr-8 mt-8'/>
+              <UploadArea onClick={handleEditClick}/>
+            </div>
           </div>}
         {isDelete && (
           <div className="fixed h-screen w-screen inset-0 flex items-center justify-center px-4 bg-light/80 z-50">
@@ -66,7 +70,7 @@ const OverviewPattern = () => {
                 <div key={pattern.code} className="flex items-center h-16">
 
                   <div className="px-2 sm:px-4 py-2 flex-1 ml-5">{pattern.code.toString().padStart(3, '0')}</div>
-                  <div className="px-2 sm:px-4 py-2 shrink-0 h-16">
+                  <div className="px-2 sm:px-4 py-2 shrink-0 sm:flex-1 h-16">
                     <img src={pattern.image} alt={`Pattern ${pattern.code.toString().padStart(3, '0')}`} className="h-full object-cover" />
                   </div>
                   <div className="px-2 sm:px-4 py-2 flex-1">{getId(pattern.tone, ToneOptions)}</div>
