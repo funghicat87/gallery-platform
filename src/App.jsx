@@ -11,7 +11,7 @@ const App = () => {
   return (
     <AuthProvider>
       <FilterProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/gallery-platform">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route
