@@ -10,9 +10,9 @@ export const AuthProvider = ({ children }) => {
   // 模擬登入，並設定權限角色
   const login = (username, password) => {
     // 假設有個簡單的帳號密碼驗證邏輯
-    if (username === 'a' && password === 'a') {
+    if (username === 'admin' && password === 'admin') {
       setUser('admin');
-    } else if (username === 'b' && password === 'b') {
+    } else if (username === 'user' && password === 'user') {
       setUser('user');
     } else {
       setUser(null);

@@ -66,7 +66,7 @@ const UploadArea = ({ className, onClick }) => {
       {/* 圖紋流水碼 */}
       {patternCode && (
         <div className="mt-4">
-          <h3 className="text-lg font-medium mb-2 text-gray-700 font-semibold">圖紋流水碼</h3>
+          <h3 className="text-lg text-gray-700 font-semibold">圖紋流水碼</h3>
           <p className="px-4 py-2 bg-gray-100 border rounded-lg text-gray-800">
             {patternCode}
           </p>
