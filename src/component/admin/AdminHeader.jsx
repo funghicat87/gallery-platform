@@ -43,7 +43,7 @@ const AdminHeader = () => {
       </div>
 
       {/* sm Nav */}
-      <div className='flex justify-between w-full md:hidden'>
+      <div className='flex justify-between gap-4 w-full md:hidden'>
         <img src={Logo} alt="Logo" className='h-8'/>
         <div onClick={toggleNav}>
           {isNavOpen ? <HamburgerMenu isOpen/> : <HamburgerMenu/>}

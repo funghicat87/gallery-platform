@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../component/AuthContext';
 import Glacier from '../assets/glacier-01.png';
@@ -31,18 +31,37 @@ const Login = () => {
       setError('帳號或密碼錯誤');
     }
   }
+  const containerRef = useRef(null);
+  const [isCentered, setIsCentered] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current) {
+        const containerHeight = containerRef.current.offsetHeight;
+        const screenHeight = window.innerHeight;
+
+        // 當螢幕高度小於 container 高度時切換 class
+        setIsCentered(screenHeight >= containerHeight);
+      }
+    };
+
+    // 初始化檢查
+    handleResize();
+
+    // 監聽視窗大小變化
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div 
-     className="h-screen flex justify-center items-center bg-light"
-    >    
-      <div className='flex justify-center items-center bg-white p-3 md:flex-col lg:flex-row md:w-auto md:h-auto rounded-[40px]'>
+    <div className={`h-screen flex justify-center ${isCentered ? 'items-center' : 'items-start'} bg-light overflow-auto`}>    
+      <div id='container'  ref={containerRef} className='w-full h-full flex justify-center items-center bg-white p-3 md:flex-col lg:flex-row sm:w-auto sm:h-auto sm:rounded-[40px]'>
         {/* lg picture */}
         <div className="hidden lg:block relative">
           <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0 }} width="0" height="0">
             <defs>
               <clipPath id="clip-shape">
-                <path d="m348.62,600H30.59c-16.89,0-30.59-13.7-30.59-30.59V30.59C0,13.7,13.7,0,30.59,0h400c18.73,0,33.06,16.68,30.24,35.19l-81.98,538.82c-2.27,14.95-15.12,25.99-30.24,25.99Z"/>
+                <path d="m348.62,600H30.59c-16.89,0-30.59-13.7-30.59-30.59V30.59C0,1  3.7,13.7,0,30.59,0h400c18.73,0,33.06,16.68,30.24,35.19l-81.98,538.82c-2.27,14.95-15.12,25.99-30.24,25.99Z"/>
               </clipPath>
             </defs>
           </svg>
@@ -69,7 +88,7 @@ const Login = () => {
         <div className="w-full flex flex-col justify-center items-center px-16 my-10 lg:my-0">
           <img src={Logo} alt='Logo' className='h-10 mb-10'/>
           <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">登入</h2>
-          <form onSubmit={handleSubmit} className='w-44 sm:w-72'>
+          <form onSubmit={handleSubmit} className='w-50 sm:w-72'>
             <div className="mb-4">
               <label htmlFor="username" className="block text-gray-600">使用者名稱</label>
               <InputText type="text"
